@@ -1,0 +1,15 @@
+# Aggressive settings to produce fast code.
+set(OPTFLAGS "${OPTFLAGS} -O3 -fomit-frame-pointer -flto -DNDEBUG")
+if(APPLE)
+  set(OPTFLAGS "${OPTFLAGS} -mdynamic-no-pic")
+endif()
+
+set(CMAKE_C_FLAGS "${OPTFLAGS}" CACHE STRING "")
+set(CMAKE_CXX_FLAGS "${OPTFLAGS}" CACHE STRING "")
+set(CMAKE_BUILD_TYPE "Release" CACHE STRING "")
+set(LINKFLAGS "-fuse-ld=lld -Wl,--lto-whole-program-visibility -Wl,-plugin-opt=-enable-dyncastopt=false")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${LINKFLAGS}" CACHE STRING "")
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${LINKFLAGS}" CACHE STRING "")
+
+set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} ${LINKFLAGS}" CACHE STRING "")
+set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} ${LINKFLAGS}" CACHE STRING "")
