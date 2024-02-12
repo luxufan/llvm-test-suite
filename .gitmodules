@@ -1,0 +1,12 @@
+[submodule "DynCastOPT/z3"]
+	path = DynCastOPT/z3
+	url = git@github.com:luxufan/z3.git
+[submodule "DynCastOPT/solidity"]
+	path = DynCastOPT/solidity
+	url = git@github.com:luxufan/solidity.git
+[submodule "DynCastOPT/duckdb"]
+	path = DynCastOPT/duckdb
+	url = git@github.com:luxufan/duckdb.git
+[submodule "DynCastOPT/olive"]
+	path = DynCastOPT/olive
+	url = git@github.com:luxufan/olive.git
