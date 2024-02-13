@@ -10,3 +10,6 @@
 [submodule "DynCastOPT/olive"]
 	path = DynCastOPT/olive
 	url = git@github.com:luxufan/olive.git
+[submodule "DynCastOPT/Heimer"]
+	path = DynCastOPT/Heimer
+	url = git@github.com:luxufan/Heimer.git
