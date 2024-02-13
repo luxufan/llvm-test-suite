@@ -13,3 +13,6 @@
 [submodule "DynCastOPT/Heimer"]
 	path = DynCastOPT/Heimer
 	url = git@github.com:luxufan/Heimer.git
+[submodule "DynCastOPT/doxygen"]
+	path = DynCastOPT/doxygen
+	url = git@github.com:luxufan/doxygen.git
