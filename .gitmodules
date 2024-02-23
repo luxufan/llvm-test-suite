@@ -16,3 +16,6 @@
 [submodule "DynCastOPT/doxygen"]
 	path = DynCastOPT/doxygen
 	url = git@github.com:luxufan/doxygen.git
+[submodule "DynCastOPT/Sourcetrail"]
+	path = DynCastOPT/Sourcetrail
+	url = git@github.com:luxufan/Sourcetrail.git
