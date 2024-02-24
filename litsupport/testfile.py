@@ -100,6 +100,9 @@ def parse(context, filename):
     context.parsed_runscript = runscript
     context.parsed_verifyscript = verifyscript
     context.parsed_metricscripts = metricscripts
+    if filename.find(.so):
+        context.executable = filename[:-len(.size)]
+
     context.executable = shellcommand.getMainExecutable(context)
     if not context.executable:
         logging.error("Could not determine executable name in %s" % filename)

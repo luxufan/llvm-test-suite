@@ -22,3 +22,6 @@
 [submodule "DynCastOPT/poco"]
 	path = DynCastOPT/poco
 	url = git@github.com:luxufan/poco.git
+[submodule "DynCastOPT/assimp"]
+	path = DynCastOPT/assimp
+	url = git@github.com:assimp/assimp.git
