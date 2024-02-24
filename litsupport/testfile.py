@@ -69,7 +69,7 @@ def parse(context, filename):
             raise ValueError("unknown script command type: %r" % (command_type,))
 
     # Verify the script contains a run line.
-    if runscript == []:
+    if runscript == [] and not filename.find(".so"):
         raise ValueError("Test has no RUN: line!")
 
     # Check for unterminated run lines.

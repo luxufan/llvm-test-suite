@@ -36,6 +36,7 @@ class TestSuiteTest(lit.formats.ShTest):
         if litConfig.noExecute:
             return lit.Test.Result(lit.Test.PASS)
 
+        is_shared_library = test.getSourcePath().find(".so")
         # Parse .test file and initialize context
         tmpDir, tmpBase = lit.TestRunner.getTempPaths(test)
         lit.util.mkdir_p(os.path.dirname(tmpBase))
@@ -44,7 +45,7 @@ class TestSuiteTest(lit.formats.ShTest):
         plan = litsupport.testplan.TestPlan()
 
         # Report missing test executables.
-        if not os.path.exists(context.executable):
+        if not is_shared_library and not os.path.exists(context.executable):
             return lit.Test.Result(
                 NOEXE, "Executable '%s' is missing" % context.executable
             )

@@ -97,6 +97,7 @@ def _executeScript(context, script, scriptBaseName, useExternalSh=True):
 def _executePlan(context, plan):
     """Executes a test plan (a TestPlan object)."""
     # Execute PREPARE: part of the test.
+    result = lit.Test.PASS
     _, _, exitCode, _ = _executeScript(context, plan.preparescript, "prepare")
     if exitCode != 0:
         return lit.Test.FAIL
@@ -104,7 +105,7 @@ def _executePlan(context, plan):
     # Execute RUN: part of the test.
     _, _, exitCode, _ = _executeScript(context, plan.runscript, "run")
     if exitCode != 0:
-        return lit.Test.FAIL
+        result = lit.Test.FAIL
 
     # Execute VERIFY: part of the test.
     _, _, exitCode, _ = _executeScript(context, plan.verifyscript, "verify")
@@ -112,7 +113,7 @@ def _executePlan(context, plan):
         # The question here is whether to still collects metrics if the
         # benchmark results are invalid. I choose to avoid getting potentially
         # broken metric values as well for a broken test.
-        return lit.Test.FAIL
+        result = lit.Test.FAIL
 
     # Execute additional profile gathering actions setup by testing modules.
     _, _, exitCode, _ = _executeScript(context, plan.profilescript, "profile")
@@ -147,7 +148,7 @@ def _executePlan(context, plan):
                 "Metric reported for '%s' is not a float: '%s'", metric, out
             )
 
-    return lit.Test.PASS
+    return result
 
 
 def executePlanTestResult(context, testplan):

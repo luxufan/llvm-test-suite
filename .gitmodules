@@ -19,3 +19,6 @@
 [submodule "DynCastOPT/Sourcetrail"]
 	path = DynCastOPT/Sourcetrail
 	url = git@github.com:luxufan/Sourcetrail.git
+[submodule "DynCastOPT/poco"]
+	path = DynCastOPT/poco
+	url = git@github.com:luxufan/poco.git
