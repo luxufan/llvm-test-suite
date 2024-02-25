@@ -25,3 +25,6 @@
 [submodule "DynCastOPT/assimp"]
 	path = DynCastOPT/assimp
 	url = git@github.com:assimp/assimp.git
+[submodule "DynCastOPT/vcmi"]
+	path = DynCastOPT/vcmi
+	url = git@github.com:luxufan/vcmi.git
