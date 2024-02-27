@@ -59,6 +59,8 @@ def read_lit_json(filename):
         name = test["name"]
         if "shortname" in test:
             name = test["shortname"]
+        else:
+            name = name.split('/')[-1][:-len(".test")]
         testnames.append(name)
 
         datarow = [nan] * len(columns)
