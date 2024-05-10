@@ -28,3 +28,6 @@
 [submodule "DynCastOPT/vcmi"]
 	path = DynCastOPT/vcmi
 	url = git@github.com:luxufan/vcmi.git
+[submodule "DynCastOPT/suyu"]
+	path = DynCastOPT/suyu
+	url = git@github.com:luxufan/suyu.git
