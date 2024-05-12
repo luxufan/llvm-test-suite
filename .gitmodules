@@ -31,3 +31,6 @@
 [submodule "DynCastOPT/suyu"]
 	path = DynCastOPT/suyu
 	url = git@github.com:luxufan/suyu.git
+[submodule "DynCastOPT/TrinityCore"]
+	path = DynCastOPT/TrinityCore
+	url = git@github.com:luxufan/TrinityCore.git
