@@ -1,5 +1,5 @@
 # Aggressive settings to produce fast code.
-set(OPTFLAGS "${OPTFLAGS} -O3 -fomit-frame-pointer -flto -DNDEBUG")
+set(OPTFLAGS "${OPTFLAGS} -O3 -fomit-frame-pointer -fwhole-program-vtables -save-stats=obj -flto -DNDEBUG")
 if(APPLE)
   set(OPTFLAGS "${OPTFLAGS} -mdynamic-no-pic")
 endif()

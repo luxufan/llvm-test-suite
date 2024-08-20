@@ -1,4 +1,4 @@
-set(OPTFLAGS "${OPTFLAGS} -fvisibility=hidden -fwhole-program-vtables -O3 -fomit-frame-pointer -flto=thin -DNDEBUG")
+set(OPTFLAGS "${OPTFLAGS} -fvisibility=hidden -fwhole-program-vtables -Wl,-plugin-opt=-enable-dyncastopt=false -O3 -fomit-frame-pointer -flto=thin -DNDEBUG")
 if(APPLE)
   set(OPTFLAGS "${OPTFLAGS} -mdynamic-no-pic")
 endif()

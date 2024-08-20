@@ -336,11 +336,7 @@ option(TEST_SUITE_COLLECT_STATS "Collect LLVM statistics" OFF)
 if(TEST_SUITE_COLLECT_STATS)
   list(APPEND CFLAGS -save-stats=obj)
   list(APPEND CXXFLAGS -save-stats=obj)
-  # Collect stats for LTO step too.
-  if (${CMAKE_C_FLAGS} MATCHES ".*-flto.*" AND
-      ${CMAKE_CXX_FLAGS} MATCHES ".*-flto.*")
-    list(APPEND LDFLAGS -save-stats=obj)
-  endif()
+  list(APPEND LDFLAGS -save-stats=obj)
 endif()
 
 # Detect and include subdirectories
