@@ -23,9 +23,6 @@ def main():
     nan_index = np.isnan(candidates)
     candidates[nan_index] = 0
 
-    # Exchange two columns
-    exchange_columns = ['dyncastopt.NumThreeCandidates', 'dyncastopt.NumRangeCheck']
-    candidates = candidates.reindex(columns=exchange_columns)
 
     # Do summation
     candidates = candidates.sum(axis=0)
@@ -35,7 +32,9 @@ def main():
     non_optimized = non_optimized.rename(index={'dyncastopt.NumNonFixedInLTO': 'dyncastopt.NumVirtualInherit'})
     num_all_dyncast = candidates.sum(axis=0)
 
-    # print(non_optimized)
+    # Exchange two columns
+    exchange_columns = ['dyncastopt.NumLeafNodes', 'dyncastopt.NumTwoCandidates', 'dyncastopt.NumThreeCandidates', 'dyncastopt.NumRangeCheck', 'dyncastopt.NumMoreThanThreeCandidates', 'dyncastopt.NumNonOptimized']
+    candidates = candidates.reindex(exchange_columns)
     print(candidates)
 
     # make figure and assign axis objects
