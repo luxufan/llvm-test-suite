@@ -54,6 +54,7 @@ def main():
 
     fig.set_figheight(20)
     fig.set_figwidth(30)
+    ax1.set_title("code size")
     x = np.arange(len(improvement.index))
     kwargs = dict(linewidth=0.02, visible=True)
     for col in improvement.columns:
