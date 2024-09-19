@@ -41,19 +41,17 @@ def main():
     thin_improvement = thin_improvement.rename(columns={"size" : "thinlto"})
 
     improvement = thin_improvement
-    improvement.insert(1, "fulllto", full_improvement["fulllto"], allow_duplicates=True)
+    #improvement.insert(1, "fulllto", full_improvement["fulllto"], allow_duplicates=True)
     improvement = improvement.round(2)
 
     print(improvement)
 
     width = 0.35
     multiplier = 0
-    plt.rcParams.update({'font.size': 23})
-    fig, ax1 = plt.subplots()
+    plt.rcParams.update({'font.size': 13})
+    fig, ax1 = plt.subplots(figsize=(10, 5))
     fig.subplots_adjust(hspace=0.08)
 
-    fig.set_figheight(20)
-    fig.set_figwidth(30)
     ax1.set_title("code size")
     x = np.arange(len(improvement.index))
     kwargs = dict(linewidth=0.02, visible=True)
@@ -61,7 +59,7 @@ def main():
         offset = width * multiplier
         labels = improvement[col].round(2).astype('str') + '%'
         rects = ax1.bar(x + offset, improvement[col], width, label=col, **kwargs)
-        ax1.bar_label(rects, labels=labels, padding=3)
+        #ax1.bar_label(rects, labels=labels, padding=3)
         #ax2.bar(x + offset, improvement[col], width, label=col, **kwargs)
         #ax1.bar_label(rects, padding = 3)
         multiplier += 1
@@ -70,7 +68,7 @@ def main():
     ax1.set_ylabel('code size')
     ax1.set_xlabel("benchmarks")
     ax1.set_xticks(x + width/2, improvement.index)
-    ax1.legend(loc="upper right", ncols=2, fontsize="40")
+    ax1.legend(loc="upper right", ncols=2, fontsize="20")
     #plot = base_improvement.plot.bar(rot=0, figsize=(46, 30))
     d = .5
     plt.show()
