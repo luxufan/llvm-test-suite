@@ -52,7 +52,7 @@ def main():
 
     width = 0.35
     multiplier = 0
-    plt.rcParams.update({'font.size': 30})
+    plt.rcParams.update({'font.size': 15})
     fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True)
     fig.subplots_adjust(hspace=0.08)
 
@@ -62,8 +62,8 @@ def main():
     ax1.tick_params(labeltop=False)
     ax2.xaxis.tick_bottom()
 
-    fig.set_figheight(20)
-    fig.set_figwidth(30)
+    fig.set_figheight(10)
+    fig.set_figwidth(15)
     x = np.arange(len(improvement.index))
     kwargs = dict(linewidth=0.02, visible=True)
     for col in improvement.columns:
@@ -73,8 +73,8 @@ def main():
         #ax1.bar_label(rects, padding = 3)
         multiplier += 1
 
-    ax1.set_ylim(50, 100)
-    ax2.set_ylim(0, 3)
+    ax1.set_ylim(40, 80)
+    ax2.set_ylim(-2, 3)
     ax2.set_ylabel('performance improvement percentage')
     ax2.set_xlabel("benchmarks")
     ax2.set_xticks(x + width/2, improvement.index)
@@ -82,7 +82,7 @@ def main():
     #plot = base_improvement.plot.bar(rot=0, figsize=(46, 30))
     d = .5
     leg = plt.legend()
-    kwargs = dict(marker=[(-1, -d), (1, d)], markersize=65,
+    kwargs = dict(marker=[(-1, -d), (1, d)], markersize=32,
               linestyle="none", color='k', mec='k', mew=3, clip_on=False)
     ax1.plot([0, 1], [0, 0], transform=ax1.transAxes, **kwargs)
     ax1.plot([0, 0.303], [0, 0], transform=ax1.transAxes, **kwargs)

@@ -38,7 +38,7 @@ def main():
     print(candidates)
 
     # make figure and assign axis objects
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(60, 34))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(30, 15))
     fig.subplots_adjust(wspace=0)
     plt.rcParams.update({'font.size': 23})
 
