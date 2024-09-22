@@ -49,7 +49,7 @@ def main():
     width = 0.35
     multiplier = 0
     plt.rcParams.update({'font.size': 13})
-    fig, ax1 = plt.subplots(figsize=(10, 5))
+    fig, ax1 = plt.subplots(figsize=(10, 6))
     fig.subplots_adjust(hspace=0.08)
 
     ax1.set_title("code size")
