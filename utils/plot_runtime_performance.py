@@ -43,7 +43,7 @@ def main():
     improvement = thin_improvement
     improvement.insert(1, "fulllto", full_improvement["fulllto"], allow_duplicates=True)
     improvement = improvement.round(2)
-    improvement = improvement.drop(["chrome"])
+    #improvement = improvement.drop(["chrome"])
 
     print(improvement)
 
@@ -80,14 +80,14 @@ def main():
     #plot = base_improvement.plot.bar(rot=0, figsize=(46, 30))
     d = .5
     leg = plt.legend()
-    kwargs = dict(marker=[(-1, -d), (1, d)], markersize=28,
-              linestyle="none", color='k', mec='k', mew=3, clip_on=False)
+    kwargs = dict(marker=[(-1, -d), (1, d)], markersize=20,
+              linestyle="none", color='k', mec='k', mew=2, clip_on=False)
     ax1.plot([0, 1], [0, 0], transform=ax1.transAxes, **kwargs)
-    ax1.plot([0, 0.303], [0, 0], transform=ax1.transAxes, **kwargs)
-    ax1.plot([0, 0.345], [0, 0], transform=ax1.transAxes, **kwargs)
+    ax1.plot([0, 0.27], [0, 0], transform=ax1.transAxes, **kwargs)
+    ax1.plot([0, 0.31], [0, 0], transform=ax1.transAxes, **kwargs)
     ax2.plot([0, 1], [1, 1], transform=ax2.transAxes, **kwargs)
-    ax2.plot([0.303, 1], [1, 1], transform=ax2.transAxes, **kwargs)
-    ax2.plot([0.345, 1], [1, 1], transform=ax2.transAxes, **kwargs)
+    ax2.plot([0.27, 1], [1, 1], transform=ax2.transAxes, **kwargs)
+    ax2.plot([0.31, 1], [1, 1], transform=ax2.transAxes, **kwargs)
     ax2.get_legend().remove()
     plt.show()
     plt.savefig(metrics[0].replace(".", "_"))
