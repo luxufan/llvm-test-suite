@@ -185,7 +185,7 @@ def main():
     #ax.tick_params(axis='x', labelrotation=18)
     plt.setp(ax1.xaxis.get_majorticklabels(), rotation=30, ha='right', rotation_mode='anchor')
     plt.setp(ax2.xaxis.get_majorticklabels(), rotation=30, ha='right', rotation_mode='anchor')
-    plt.savefig('removed_rtti')
+    plt.savefig('opt_rtti_vtable.pdf')
 
     #
     df = pd.DataFrame()
@@ -234,6 +234,6 @@ def main():
     ax.spines['right'].set_visible(False)
 
     plt.setp(ax.xaxis.get_majorticklabels(), rotation=30, ha='right', rotation_mode='anchor')
-    plt.savefig('base_rtti')
+    plt.savefig('vanala_rtti.pdf')
 if __name__ == "__main__":
     main()
