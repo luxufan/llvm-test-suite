@@ -51,7 +51,7 @@ def main():
     thin_improvement = thin_improvement.rename(columns={"size" : "ThinLTO"})
 
     improvement = full_improvement
-    improvement.insert(1, "ThinLTO", thin_improvement["ThinLTO"], allow_duplicates=True)
+    improvement.insert(1, "ThinLTO", thin_improvement, allow_duplicates=True)
     improvement = improvement.round(2)
 
     print(improvement)
