@@ -38,10 +38,8 @@ def main():
     compare_full_data = compare_full_data.reindex(rows)
 
     # Extract metrics
-    metrics = config.metrics
-    for metric in metrics:
-        if metric not in base_thin_data.columns:
-            sys.stderr.write("Unknown metric '%s'\n" % metric)
+
+    metrics = [ 'size' ]
 
     base_thin_metrics = base_thin_data[metrics]
     base_full_metrics = base_full_data[metrics]
