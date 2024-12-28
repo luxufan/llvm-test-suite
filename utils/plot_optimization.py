@@ -106,7 +106,7 @@ def main():
         axes_list[i].tick_params(axis='x', which='major', pad=3)
 
     plt.show()
-    plt.savefig("optimization")
+    plt.savefig("optimization.pdf")
 
 if __name__ == "__main__":
     main()
